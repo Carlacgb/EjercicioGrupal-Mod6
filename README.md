@@ -1,42 +1,32 @@
 
 
-nombre: Edwin Maureira Toledo
-curso: frond end Corfo grupo 1
-Modulo 6 - Ejercicio Practico 2
+# ABPro: Implementación Completa de PWA en la Web del Hospital
 
-## Estructura del Proyecto
-
-La aplicación está estructurada con los siguientes componentes principales:
-
--   `App.jsx`: Componente principal de la aplicación que configura el enrutamiento.
+## Descripción: 
+Se implementa una PWA completa para la web del hospital. Se hace uso de ReactJS y aprovecha al máximo las características de PWA, incluyendo almacenamiento web avanzado, estrategias de Service Worker, y análisis de rendimiento y accesibilidad con Lighthouse. A su vez, se integrarán nuevas funcionalidades de uso de periféricos del sistema operativo, accesos a APIs externas, y una estrategia avanzada de despliegue en un servidor.
 
 
-## Cómo Ejecutar la Aplicación
+## 1. Creación del Manifiesto y Configuración Inicial
+Se crear el archivo manifes.json dentro de la carpeta public.
 
-1.  Asegúrate de tener Node.js y npm (o yarn) instalados.
-2.  Clona el repositorio. (git clone https://github.com/emaureira/modulo6_ejeercicioPractico2.git) 
-3.  Navega al directorio del proyecto en tu terminal. (modulo6_ejeercicioPractico2)
-4.  Instala las dependencias utilizando `npm install` o `yarn install`.
-5.  Inicia el servidor de desarrollo con `npm run dev` o `yarn start`.
-6.  Abre tu navegador y navega en localhost
+## 2. Integración de Service Worker para Gestión Avanzada de Caché
+Se implementa el Service Worker en el archivo sw.js
 
-## Se configure en vite config.js el Manifiesto
-    Nombre de la aplicación: Mi PWA - HOSPITAL CFE
-    Modo de Pantalla: standalone
+## 3. Acceso a Periféricos del Sistema Operativo
+Se crea componenten camara.jsx y este se implementa en el componente Cita.jsx, donde tambien se implementa la geolocalización.
 
-##Configuracion Service Worker (sw.js)
 
-Durante la instalacion se crea un cache de y en ella se guardan los archivos que estan en la constante: urlsToCache
+## 4. Consumo de API Externa para Datos Médicos
+Se implementa el consumo de la api externa en componenten EquipoMedico y el archivo api-externa.js
 
-durante la activacion se elimina la cache anterior
 
-durante la captura de datos hacia una peticion de red, lo primero que devuelve es lo que esta en cache, si no esta va a buscarlo a la red, lo almacena en cache y luego devuelve la informacion
+## 5. Pruebas de Rendimiento y Optimización con Lighthouse
+Se hacen pruebas de rendmiento Lighthouse y da como resultado:
+- Perfomance: 59
+- Accesibilidad: 98
+- Mejores practicas: 93 
+- SEO: 83
 
-## LocalStorage
-Se crea en Home.jsx, un pequeño formulario para que guarden el nombre y la especialidad a consultar frecuentemente, el nombre y la especialida es almacenada el el LocalStorage
 
-## Citas
-se utiliza IndexedDB con la libreria idb, se crea un archivo db.js para manejar la base de datos en IndexedDB y se agregan las funciones, de agregar, listartodo, eliminar y obtener una cita
 
-En citas.jsx importamos agregar, listar, eliminar de db.js
 
